@@ -1,19 +1,36 @@
 import { Switch } from "@mui/material";
 import { getDatabase, ref, set, onValue } from "firebase/database";
 import React, { useEffect, useState } from "react";
+import checkIfUserExists from "../helpers/account";
 import firebaseApp from "../helpers/firebaseApp";
+import { useRouter } from "next/router";
 
 function Home() {
   const [database, setDatabase] = useState(null);
   const [ledState, setLedState] = useState(null);
   const [connected, setConnected] = useState(false);
+  const router = useRouter();
 
   const label = { inputProps: { "aria-label": "Switch demo" } };
 
   useEffect(() => {
     (async () => {
-      const database_ = getDatabase(firebaseApp);
-      setDatabase(database_);
+      const user = await checkIfUserExists();
+      if (user) {
+        const database_ = getDatabase(firebaseApp);
+        const accRef = ref(database_, "/account");
+        onValue(accRef, (snapshot) => {
+          const data = snapshot.val();
+          if (data.email === user.email && data.password === user.password) {
+            const database_ = getDatabase(firebaseApp);
+            setDatabase(database_);
+          } else {
+            router.push("/");
+          }
+        });
+      } else {
+        router.push("/");
+      }
     })();
   }, []);
 
@@ -78,7 +95,7 @@ function Home() {
               <p className="text-xs text-neutral-500 leading-5 mt-2">
                 Take control of your home with this app.
               </p>
-              <div className="mt-10 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="mt-10 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-4">
                 <button
                   onClick={() => handleLedState(ledState == 1 ? 0 : 1)}
                   className={`${
