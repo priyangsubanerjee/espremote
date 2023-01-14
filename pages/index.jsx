@@ -13,16 +13,7 @@ export default function Home() {
     (async () => {
       const user = await checkIfUserExists();
       if (user) {
-        const database_ = getDatabase(firebaseApp);
-        const accRef = ref(database_, "/account");
-        onValue(accRef, (snapshot) => {
-          const data = snapshot.val();
-          if (data.email === user.email && data.password === user.password) {
-            router.push("/home");
-          } else {
-            return false;
-          }
-        });
+        router.push("/home");
       } else {
         return false;
       }
