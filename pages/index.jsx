@@ -79,6 +79,9 @@ export default function Home() {
               <h1 className="text-3xl font-bold text-neutral-700 mt-5">
                 Home control
               </h1>
+              <p className="text-xs text-neutral-500 leading-5 mt-2">
+                Take control of your home with this app.
+              </p>
               <div className="mt-10 grid grid-cols-2 gap-4">
                 <button
                   onClick={() => handleLedState(ledState == 1 ? 0 : 1)}
