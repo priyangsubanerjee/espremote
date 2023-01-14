@@ -4,16 +4,11 @@ export default function Home() {
   return (
     <div className="h-screen w-screen bg-white">
       <div className="relative">
-        <img
-          src="https://wallpaperaccess.com/full/4888668.jpg"
-          className="brightness-50"
-          alt=""
-        />
-        <div className="p-5 absolute bottom-0">
-          <h1 className="text-3xl font-bold text-white mt-5">
+        <div className="p-5  bottom-0">
+          <h1 className="text-3xl font-bold text-slate-900 mt-5">
             Login to Home control
           </h1>
-          <p className="text-xs text-neutral-300 leading-5 mt-2">
+          <p className="text-xs text-neutral-500 leading-5 mt-2">
             Take control of your home with this app.
           </p>
         </div>
