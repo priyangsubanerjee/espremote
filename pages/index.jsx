@@ -1,11 +1,19 @@
 import { TextField } from "@mui/material";
+import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/home");
+  }, []);
   return (
     <div className="h-screen w-screen bg-white">
       <div className="relative">
         <div className="p-5  bottom-0">
-          <h1 className="text-3xl font-bold text-slate-900 mt-5">Login</h1>
+          <h1 className="text-3xl font-bold text-slate-900 mt-5">
+            Login to Home control
+          </h1>
           <p className="text-xs text-neutral-500 leading-5 mt-2">
             Take control of your home with this app.
           </p>
@@ -21,8 +29,8 @@ export default function Home() {
             label="Enter account password"
           />
         </div>
-        <button className="bg-blue-500 w-full h-12 mt-7 rounded-full text-white font-semibold">
-          Continue
+        <button className="bg-slate-900 w-full h-14 mt-7 rounded-full text-white font-semibold">
+          Login
         </button>
       </div>
     </div>
