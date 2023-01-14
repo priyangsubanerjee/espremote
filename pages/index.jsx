@@ -23,7 +23,7 @@ export default function Home() {
             label="Enter account password"
           />
         </div>
-        <button className="bg-slate-900 w-full h-14 mt-7 rounded-full text-white font-semibold">
+        <button className="bg-slate-900 w-full h-12 mt-7 rounded-full text-white font-semibold">
           Login
         </button>
       </div>
