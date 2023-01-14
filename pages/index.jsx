@@ -14,7 +14,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="p-5 mt-5">
+      <div className="p-5">
         <div className="space-y-4">
           <TextField type={"email"} fullWidth label="Enter your email" />
           <TextField
