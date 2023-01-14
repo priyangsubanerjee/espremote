@@ -64,7 +64,7 @@ export default function Home() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your registered email"
-                className="p-4 border-b w-full"
+                className="p-4 border-b w-full outline-none"
                 name=""
                 id=""
               />
@@ -73,7 +73,7 @@ export default function Home() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your account password"
-                className="p-4 border-b-0 w-full"
+                className="p-4 border-b-0 w-full outline-none"
                 name=""
                 id=""
               />
