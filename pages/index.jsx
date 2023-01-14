@@ -5,9 +5,7 @@ export default function Home() {
     <div className="h-screen w-screen bg-white">
       <div className="relative">
         <div className="p-5  bottom-0">
-          <h1 className="text-3xl font-bold text-slate-900 mt-5">
-            Login to Home control
-          </h1>
+          <h1 className="text-3xl font-bold text-slate-900 mt-5">Login</h1>
           <p className="text-xs text-neutral-500 leading-5 mt-2">
             Take control of your home with this app.
           </p>
