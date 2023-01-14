@@ -21,8 +21,8 @@ export default function Home() {
             label="Enter account password"
           />
         </div>
-        <button className="bg-slate-900 w-full h-12 mt-7 rounded-full text-white font-semibold">
-          Login
+        <button className="bg-blue-500 w-full h-12 mt-7 rounded-full text-white font-semibold">
+          Continue
         </button>
       </div>
     </div>
