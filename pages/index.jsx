@@ -83,9 +83,7 @@ export default function Home() {
                 <button
                   onClick={() => handleLedState(ledState == 1 ? 0 : 1)}
                   className={`${
-                    ledState == 1
-                      ? "bg-gradient-to-r from-green-500 via-green-600 to-green-500"
-                      : "bg-white"
+                    ledState == 1 ? "bg-green-500" : "bg-white"
                   } shadow-lg active:shadow-none shadow-slate-100 rounded-lg flex items-center p-5 transition-all`}
                 >
                   <svg
