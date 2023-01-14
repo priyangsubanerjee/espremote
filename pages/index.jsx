@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { getDatabase, ref, set, onValue } from "firebase/database";
 import React, { useEffect, useState } from "react";
 import checkIfUserExists from "../helpers/account";
@@ -25,7 +26,7 @@ export default function Home() {
           }
         });
       } else {
-        router.push("/");
+        setLoggedIn(false);
       }
     })();
   }, []);
